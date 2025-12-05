@@ -6,30 +6,30 @@ session_start();
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Login Administrador</title>
-    <link rel="stylesheet" href="../../css/estilos.css">
+    <title>Iniciar Sesión</title>
+    <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body>
 
 <div class="container">
-    <h2>Login Administrador</h2>
+    <h2>Iniciar Sesión</h2>
+
 
     <form action="controller/inicio.php" method="POST">
 
-        <label>Documento:</label>
-        <input type="number" name="doc" required>
-
-        <label>Usuario:</label>
+        <label for="usuario">Usuario:</label>
         <input type="text" name="usuario" required>
 
-        <label>Contraseña:</label>
-        <input type="password" name="password" required>
+        <label for="clave">Contraseña:</label>
+        <input type="password" name="clave" required>
 
-        <button type="submit">Ingresar</button>
+        <button type="submit" name="inicio">Ingresar</button>
     </form>
 
     <br>
-    <a href="model/admin/registro_admin.php">Registrar nuevo administrador</a>
+
+
+    <a href="registro.php">Registrarse</a>
 </div>
 
 </body>

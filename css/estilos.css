@@ -28,7 +28,7 @@ h2 {
     border-radius: 8px;
 }
 
-a{
+a {
     text-decoration: none;
     color: #ffffff;
     background-color: #6e0085;
@@ -81,4 +81,14 @@ th {
     border-radius: 16px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
     border-top: 6px solid var(--primary-color);
+}
+
+.select {
+    width: 100%;
+    padding: 8px;
+    margin: 8px 0;
+}
+
+.option {
+    padding: 8px;
 }

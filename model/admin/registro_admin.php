@@ -21,31 +21,39 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <title>Registrar Admin</title>
     <link rel="stylesheet" href="../../css/estilos.css">
 </head>
+
 <body>
 
-<div class="container">
-    <h2>Registrar Administrador</h2>
+    <div class="container">
+        <h2>Registrar Administrador</h2>
 
-    <form method="POST">
+        <form method="POST">
 
-        <label>Documento:</label>
-        <input type="number" name="doc" required>
+            <label>Documento:</label>
+            <input type="number" name="doc" required>
 
-        <label>Usuario:</label>
-        <input type="text" name="usuario" required>
+            <label>Usuario:</label>
+            <input type="text" name="usuario" required>
 
-        <label>Contraseña:</label>
-        <input type="password" name="password" required>
+            <label>Contraseña:</label>
+            <input type="password" name="password" required>
 
-        <button type="submit">Registrar</button>
-    </form>
+            <button type="submit">Registrar</button>
 
-</div>
+            <br><br>
+            <div class="a">
+                <?php echo "<a href='indexx.php'>Volver</a>"; ?>
+            </div>
+        </form>
+
+    </div>
 
 </body>
+
 </html>

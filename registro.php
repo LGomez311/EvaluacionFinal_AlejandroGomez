@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once("../../db/conection.php");
+require_once("db/conection.php");
 
 $db = new Database();
 $con = $db->conectar();
@@ -21,13 +21,13 @@ if (isset($_POST["Validar"])) {
 
     if ($fila) {
         echo '<script>alert("DOCUMENTO O USUARIO YA EXISTEN");</script>';
-        echo '<script>window.location="crear_usuario.php"</script>';
+        echo '<script>window.location="registro.php"</script>';
         exit();
     }
 
     if (empty($cedula) || empty($nombre) || empty($usuario) || empty($clave) || empty($rol)) {
         echo '<script>alert("EXISTEN CAMPOS VACÍOS");</script>';
-        echo '<script>window.location="crear_usuario.php"</script>';
+        echo '<script>window.location="registro.php"</script>';
         exit();
     }
 
@@ -38,10 +38,10 @@ if (isset($_POST["Validar"])) {
 
     if ($insertSQL->execute([$cedula, $nombre, $usuario, $pass_cifrado, $rol])) {
         echo '<script>alert("REGISTRO EXITOSO");</script>';
-        echo '<script>window.location="crear_usuario.php"</script>';
+        echo '<script>window.location="login.php"</script>';
     } else {
         echo '<script>alert("ERROR AL REGISTRAR USUARIO");</script>';
-        echo '<script>window.location="crear_usuario.php"</script>';
+        echo '<script>window.location="registro.php"</script>';
     }
 }
 ?>
@@ -51,8 +51,8 @@ if (isset($_POST["Validar"])) {
 
 <head>
     <meta charset="utf-8">
-    <title>Crear Usuario</title>
-    <link rel="stylesheet" href="../../css/estilos.css">
+    <title>Registrarse</title>
+    <link rel="stylesheet" href="css/estilos.css">
 </head>
 
 <body>
@@ -79,7 +79,7 @@ if (isset($_POST["Validar"])) {
                 <option value="">Seleccione uno...</option>
 
                 <?php
-                $roles = $con->prepare("SELECT * FROM roles");
+                $roles = $con->prepare("SELECT * FROM roles WHERE id = 2");
                 $roles->execute();
 
                 while ($tp = $roles->fetch(PDO::FETCH_ASSOC)) {
@@ -92,7 +92,7 @@ if (isset($_POST["Validar"])) {
 
             <br><br>
             <div class="a">
-                <?php echo "<a href='indexx.php'>Volver</a>"; ?>
+                <?php echo "<a href='index.php'>Volver</a>"; ?>
             </div>
 
         </form>
