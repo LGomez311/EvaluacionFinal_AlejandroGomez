@@ -1,5 +1,5 @@
 <?php
-include("db/conection.php");
+include("../../db/conection.php");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -24,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <title>Registrar Admin</title>
-    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="../../css/estilos.css">
 </head>
 <body>
 

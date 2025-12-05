@@ -1,5 +1,5 @@
 <?php
-require_once "db/conection.php";
+require_once "../../db/conection.php";
 
 $db = new Database();
 $conn = $db->conectar();
@@ -10,7 +10,7 @@ $conn = $db->conectar();
 <head>
     <meta charset="UTF-8">
     <title>Consultar saldo</title>
-    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="../../css/estilos.css">
 </head>
 
 <body>

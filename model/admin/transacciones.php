@@ -1,5 +1,5 @@
 <?php
-require_once "db/conection.php";
+require_once "../../db/conection.php";
 
 $db = new Database();
 $conn = $db->conectar();
@@ -15,7 +15,7 @@ $movimientos = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <head>
     <meta charset="UTF-8">
     <title>Historial transacciones</title>
-    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="../../css/estilos.css">
 </head>
 
 <body>

@@ -7,14 +7,14 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <title>Login Administrador</title>
-    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="../../css/estilos.css">
 </head>
 <body>
 
 <div class="container">
     <h2>Login Administrador</h2>
 
-    <form action="procesar_login_admin.php" method="POST">
+    <form action="controller/inicio.php" method="POST">
 
         <label>Documento:</label>
         <input type="number" name="doc" required>
@@ -29,7 +29,7 @@ session_start();
     </form>
 
     <br>
-    <a href="registro_admin.php">Registrar nuevo administrador</a>
+    <a href="model/admin/registro_admin.php">Registrar nuevo administrador</a>
 </div>
 
 </body>
