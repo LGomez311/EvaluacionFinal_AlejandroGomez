@@ -34,7 +34,24 @@ a {
     background-color: #6e0085;
 }
 
+input[type="number"],
+input[type="text"],
+select {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 15px;
+    box-sizing: border-box;
+}
 
+
+select {
+    height: 40px;
+    background-color: #fff;
+    cursor: pointer;
+}
 
 label {
     font-weight: bold;
@@ -91,4 +108,18 @@ th {
 
 .option {
     padding: 8px;
+}
+
+.btn-logout {
+    background: #d9534f;
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    float: right;
+    margin-bottom: 20px;
+}
+
+.btn-logout:hover {
+    background: #c9302c;
 }

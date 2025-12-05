@@ -43,6 +43,8 @@ if (isset($_POST["Validar"])) {
         echo '<script>alert("ERROR AL REGISTRAR USUARIO");</script>';
         echo '<script>window.location="registro.php"</script>';
     }
+
+    
 }
 ?>
 
@@ -72,7 +74,7 @@ if (isset($_POST["Validar"])) {
             <input type="text" name="user">
 
             <label>Contraseña</label>
-            <input type="password" name="pass">
+            <input type="password" name="pass" minlength="8">
 
             <label>Rol</label>
             <select class="select" name="rol">

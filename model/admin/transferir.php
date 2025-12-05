@@ -1,3 +1,15 @@
+<?php
+require_once "../../db/conection.php";
+
+$db = new Database();
+$conn = $db->conectar();
+
+
+$sql = $conn->prepare("SELECT documento, nombre, usuario FROM usuarios WHERE rol_id=2  ORDER BY nombre ASC");
+$sql->execute();
+$usuarios = $sql->fetchAll(PDO::FETCH_ASSOC);
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -13,20 +25,37 @@
 
         <form action="procesar_transferencia.php" method="POST">
 
-            <label>Documento del remitente (quien envía):</label>
-            <input type="number" name="documento_envia" required>
+         
+            <label>Seleccione quien envía:</label>
+            <select name="documento_envia" required>
+                <option value="">-- Selecciona un usuario --</option>
+                <?php foreach ($usuarios as $u): ?>
+                    <option value="<?= $u['documento'] ?>">
+                        <?= $u['nombre'] . " (" . $u['usuario'] . ")" ?>
+                    </option>
+                <?php endforeach; ?>
+            </select>
 
-            <label>Documento del receptor (quien recibe):</label>
-            <input type="number" name="documento_recibe" required>
+           
+            <label>Seleccione quien recibe:</label>
+            <select name="documento_recibe" required>
+                <option value="">-- Selecciona un usuario --</option>
+                <?php foreach ($usuarios as $u): ?>
+                    <option value="<?= $u['documento'] ?>">
+                        <?= $u['nombre'] . " (" . $u['usuario'] . ")" ?>
+                    </option>
+                <?php endforeach; ?>
+            </select>
 
+            
             <label>Monto a transferir:</label>
-            <input type="number" name="monto" required>
+            <input type="number" name="monto" required min="100">
 
             <button type="submit">Realizar transferencia</button>
 
             <br><br>
             <div class="a">
-                <?php echo "<a href='indexx.php'>Volver</a>"; ?>
+                <a href="indexx.php">Volver</a>
             </div>
 
         </form>

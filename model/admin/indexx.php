@@ -12,7 +12,8 @@
 
 <body>
 <br><br><br>
-    <div class="container"><br><br><br>
+    <div class="container"><br><a href="../../controller/logout.php" class="btn-logout">Cerrar sesión</a><br><br>
+    
     <h1>Administrador - Sistema tipo Nequi</h1>
 
     <div class="menu">
